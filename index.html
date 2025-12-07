@@ -58,25 +58,33 @@
 		  left: 0;
 		  width: 100%;
 		  height: 100%;
-		  filter: url(#noiseFilter) brightness(0.275) contrast(0.4);
+		  filter: url(#noiseFilter);
+		  -webkit-filter: url(#noiseFilter);
 		  mix-blend-mode: difference;
-		  z-index: -1;
+		  z-index: 0;
 		}
-		.threshold{
-		filter: brightness(calc(100% + var(--threshold))) contrast(1000%);
+
+		#noiseLayer {
+		  filter: url(#noiseFilter) brightness(0.25) contrast(0.43);
+		  -webkit-filter: url(#noiseFilter) brightness(0.25) contrast(0.43);
+		}
+
+		.threshold {
+		  filter: brightness(calc(100% + var(--threshold))) contrast(1000%);
+		  -webkit-filter: brightness(calc(100% + var(--threshold))) contrast(1000%);
 		}
 	</style>
 </head>
 
 <body class="threshold">
 	<div id="noiseLayer"></div>
-	<svg viewBox='0 0 500 500' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg' style='display: none;'>
-	  <filter id='noiseFilter'>
+	<svg width="0" height="0" style="position:absolute">
+	  <filter id="noiseFilter">
 	    <feTurbulence
-	      type='fractalNoise'
-	      baseFrequency='1'
-	      numOctaves='2'
-	      stitchTiles='stitch'/>
+	      type="fractalNoise"
+	      baseFrequency="1"
+	      numOctaves="2"
+	      stitchTiles="stitch" />
 	  </filter>
 	</svg>
 	<p>Wei Huang designs, produces and engineers fonts… and occasionally uses them.</p>
@@ -110,7 +118,7 @@
 		<li>w31.hu4n9 at the free electronic mail service provided by Google</li>
 		<li><a href="http://github.com/weiweihuanghuang/" rel="noreferrer">GitHub</a></li>
 		<li><a href="https://www.instagram.com/w__h____/" rel="noreferrer">Instagram/Portfolio</a></li>
-		<li><a rel="me" href="https://typo.social/@w__h_">Mastodon</a></li>
+		<li><a href="https://typo.social/@w__h_" rel="noreferrer">Mastodon</a></li>
 		<li><a href="https://www.twitch.tv/w__h_" rel="noreferrer">Twitch</a></li>
 		<li><a href="https://twitter.com/w__h_" rel="noreferrer">Twitter</a></li>
 	</ul>
